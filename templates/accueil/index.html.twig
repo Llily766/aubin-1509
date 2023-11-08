@@ -1,95 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Hello AccueilController!
+{% endblock %}
 
 {% block body %}
-<h1>Accueil</h1>
+	<h1>Accueil</h1>
 
-<h2> Les differents services dans le garage de Vincent PARROT </h2>
-<div class="container"
-    <div class="row"
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{asset('assets/images/imagesServices/Achatvehicule.jpg')}}"alt="Achat véhicule"class="align-self-center">
-            <div class="card-body">
-                    <h5 class="card-title">Achat véhicule</h5>
-            <        <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">
-            </div>
-        </div>            
-    </div>
-</div>                
-         
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-       <img src="{{asset('assets/images/imagesServices/Bioethanol.jpg')}}"alt="Bioethanol"class="align-self-center">
-            <div class="card-body">
-        <h5 class="card-title">Bioethanol</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">
-        </div>
-            </div>
-            </div>
-            
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-        <img src="{{asset('assets/images/imagesServices/EntretienDuVehicule.jpg')}}"alt="EntretienDuVehicule"class="align-self-center">
-            <div class="card-body">
-        <h5 class="card-title">Entretien du véhicule</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">
-        </div>
-            </div>
-            </div> 
+	<h2>
+		Les differents services dans le garage de Vincent PARROT
+	</h2>
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-4">
+				<div class="card">
 
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-        <img src="{{asset('assets/images/imagesServices/voitureDepanage.jpg')}}"alt="voitureDepanage"class="align-self-center">
-            <div class="card-body">
-        <h5 class="card-title">Voiture dépannage</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">
-        </div>
-           </div>
-           </div>
+					<img src="{{asset('assets/images/imagesServices/Achatvehicule.jpg')}}" alt="Achat véhicule" class="align-self-center">
+					<div class="card-body">
+						<h5 class="card-title">Achat véhicule</h5>
+						<p class="card-text"></p>
 
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-        <img src="{{asset('assets/images/imagesServices/voitureElectrique.jpg')}}"alt="voitureElectrique"class="align-self-center">
-            <div class="card-body">
-        <h5 class="card-title">Voiture électrique</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card">
+					<img src="{{asset('assets/images/imagesServices/Bioethanol.jpg')}}" alt="Bioethanol" class="align-self-center">
+					<div class="card-body">
+						<h5 class="card-title">Bioethanol</h5>
+						<p class="card-text"></p>
 
-         </div>
-            </div>
-            </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" style="width: 18rem;">
+					<img src="{{asset('assets/images/imagesServices/EntretienDuVehicule.jpg')}}" alt="EntretienDuVehicule" class="align-self-center">
+					<div class="card-body">
+						<h5 class="card-title">Entretien du véhicule</h5>
+						<p class="card-text"></p>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" style="width: 18rem;">
+					<img src="{{asset('assets/images/imagesServices/voitureDepanage.jpg')}}" alt="voitureDepanage" class="align-self-center">
+					<div class="card-body">
+						<h5 class="card-title">Voiture dépannage</h5>
+						<p class="card-text"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" style="width: 18rem;">
+					<img src="{{asset('assets/images/imagesServices/voitureElectrique.jpg')}}" alt="voitureElectrique" class="align-self-center">
+					<div class="card-body">
+						<h5 class="card-title">Voiture électrique</h5>
+						<p class="card-text"></p>
 
 
+					</div>
+				</div>
+			</div>
 
+<div class="row">
+<div class= "col-4">
+			<h4>
+				Témoignages des clients</h4>
+			<p>Notation :★★★★★ (5 étoiles)</p>
+			<p>Rapide et efficace d'Esther P.:★★★★★ (5 étoiles)</p>
+			<p>Ma voiture était entre bonne main de Georges H.:★★★★★ (5 étoiles)</p>
+			<p>Vérifie les éléments de sécurité de la voiture.Impécable de Mr Martin:★★★★★ (5 étoiles)</p>
+</div>
+<div class= "col-4">
+			<p>Adresse : GARAGE VINCENT PARROT
+																																										        RUE DE LA FORET
+																																										        60000 TOULOUSE 
+																																										         Téléphone : 06 00 00 00 00
+			</p>
+</div>
+<div class= "col-4">
+			<h4>
+				Horaires d'ouverture:</h4>
+			<h4>Du Lundi au Vendredi :8h45-12h et de 14h-18h</h4>
+			<h4>
+				Samedi : 8h45-12h</h4>
+			<h4>
+				Dimanche : Fermé</h4>
+</div>
 
-
-<h4> Témoignages des clients</h4> <p>Notation :★★★★★ (5 étoiles)</p>
-<p>Rapide et efficace d'Esther P.:★★★★★ (5 étoiles)</p>
-<p>Ma voiture était entre bonne main de Georges H.:★★★★★ (5 étoiles)</p>
-<p>Vérifie les éléments de sécurité de la voiture.Impécable de Mr Martin:★★★★★ (5 étoiles)</p>
-
-
-
-
-
-
-
- <p>Adresse : GARAGE VINCENT PARROT
-        RUE DE LA FORET
-        60000 TOULOUSE 
-         Téléphone : 06 00 00 00 00 </p>
-
-    <h4> Horaires d'ouverture:</h4>
-    <h4>Du Lundi au Vendredi :8h45-12h et de 14h-18h</h4>
-    <h4> Samedi : 8h45-12h</h4>
-    <h4> Dimanche : Fermé</h4>
-    
-
-
-{% endblock %}
+		{% endblock %}
