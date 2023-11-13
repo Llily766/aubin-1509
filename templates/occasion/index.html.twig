@@ -5,122 +5,125 @@
 
 {% block body %}
 
+	{{ dump(Cars) }}
 	<section class="container">
 		<h1 class="text-center">Les voitures d'occasion</h1>
 		<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-			<div class="col">
-				<div class="card" style="width: 18rem;">
-					<img src="{{asset('assets/images/imagesAuto/ford.jpg')}}" alt="ford" class="align-self-center">
-					<div class="card-body">
-						<p class="card-text">FORD</p>
-						Caractéristiques:
-						                              Année de mise en circulation:2010
-						                              Nombre de kilomètre : 100 000km
-						                              Prix: 38900 euros
-					</p>
-					<a class="btn btn-dark" href="javascript:void(0)" role="button">
-						38900 €</a>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="Ford">
-						Contacter le garage
-					</button>
-				</div>
-			</div>
-		</div>
+			{% for car in Cars %}
 
-		<div class="col">
-			<div class="card" style="width: 18rem;">
-				<img src="{{asset('assets/images/imagesAuto/Citroen.jpg')}}" alt="Citroen" class="align-self-center">
-				<div class="card-body">
-					<p class="card-text">citroen</p>
-					Caractéristiques :
-					                              Année de mise en circulation: 2007
-					                              Nombre de kilomètre :200 000 km
-					                              Prix : 3250 euros
-				</p>
-				<a class="btn btn-dark" href="javascript:void(0)" role="button">
-					3250 €</a>
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-					Contacter le garage
-				</button>
-			</div>
+				<div class="col">
+					<div class="card" style="width: 18rem;">
+						<img src="upload/cars/{{ car.picture }}" alt="ford" class="align-self-center">
+						<div class="card-body">
+							<p class="card-text">{{ car.title }}</p>
+							<p>Caractéristiques:</p>
+							<p>Année de mise en circulation:{{ car.yearOfCirculation }}</p>
+							<p>Nombre de kilomètre :
+								{{ car.mileage }}</p>
+							<p>Prix:
+								{{ car.price }}
+								euros</p>
+
+						</div>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
-	<div class="col">
-		<div class="card" style="width: 18rem;">
-			<img src="{{asset('assets/images/imagesAuto/AUDI.jpg')}}" alt="AUDI" class="align-self-center">
-			<div class="card-body">
-				<p class="card-text">AUDI</p>
-				Caractéristiques:
-				                              Année de mise en circulation :2022
-				                              Nombre de kilomètre :80 000 km
-				                              Prix : 18 000 euros
-			</p>
-			<a class="btn btn-dark" href="javascript:void(0)" role="button">
-				18 000 €</a>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-				Contacter le garage
-			</button>
+
+	<section class="container mt-5">
+		<div class="row">
+			<table class="tableau-style table table-dark table-hover">
+				<thead>
+					<tr>
+						<th colspan="2"></th>
+						<th scope="col">Ford</th>
+						<th scope="col">citroen</th>
+						<th scope="col">Audi</th>
+						<th scope="col">clio</th>
+						<th scope="col">espace</th>
+						<th scope="col">peugeot</th>
+						<th scope="col">clio1</th>
+						<th scope="col">ZOE</th>
+						<th scope="col">mercedes</th>
+						<th scope="col">citroenc3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="2">airbag</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+					</tr>
+					<tr>
+						<td colspan="2">ABS</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+					</tr>
+					<tr>
+						<td colspan="2">Fermetures centralisées</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+					</tr>
+					<tr>
+						<td colspan="2">bluetooh</td>
+						<td>OUI</td>
+						<td>NON</td>
+						<td>OUI</td>
+						<td>NON</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>NON</td>
+					</tr>
+					<tr>
+						<td colspan="2">Rechargement électrique</td>
+						<td>NON</td>
+						<td>NON</td>
+						<td>OUI</td>
+						<td>NON</td>
+						<td>NON</td>
+						<td>NON</td>
+						<td>NON</td>
+						<td>OUI</td>
+						<td>OUI</td>
+						<td>NON</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-	</div>
-</div>
-<div class="col">
-	<div class="card" style="width: 18rem;">
-		<img src="{{asset('assets/images/imagesAuto/clio.jpg')}}" alt="clio" class="align-self-center">
-		<div class="card-body">
-			<p class="card-text">clio</p>
-			Caractéristiques : 
-			                              Année de mise en circulation : 2014
-			                              Nombre de kilomètre :80 000 km
-			                              Prix: 3600 euros
-		</p>
-		<a class="btn btn-dark" href="javascript:void(0)" role="button">
-			3600 €</a>
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-			Contacter le garage
-		</button>
-	</div>
-</div></div><div class="col">
-<div class="card" style="width: 18rem;">
-	<img src="{{asset('assets/images/imagesAuto/espace.jpg')}}" alt="espace" class="align-self-center">
-	<div class="card-body">
-		<p class="card-text">espace</p>
-		Caractéristiiques:
-		                              Année de mise en circulation: 2007
-		                              Nombre de Kilomètre : 120 000 km
-		                              Prix : 3050 euros
-	</p>
-	<a class="btn btn-dark" href="javascript:void(0)" role="button">
-		3050 €</a>
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-		Contacter le garage
-	</button>
-</div></div></div><div class="col"><div class="card" style="width: 18rem;">
-<img src="{{asset('assets/images/imagesAuto/PEUGEOT.jpg')}}" alt="PEUGEOT" class="align-self-center">
-<div class="card-body">
-	<p class="card-text">PEUGEOT</p>
-	Caractéristiques:
-	                              Année de mise en circulation: 2009
-	                              Nombre de kilomètre : 150 000km
-	                              Prix : 3050 euros
-</p>
-<a class="btn btn-dark" href="javascript:void(0)" role="button">
-	3050 €</a>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-	Contacter le garage
-</button></div></div></div><div class="col"><div class="card" style="width: 18rem;"><img src="{{asset('assets/images/imagesAuto/clio1.jpg')}}" alt="clio1" class="align-self-center"><div class="card-body">
-<p class="card-text">clio1</p>
-Caractéristiques:
-                              Année de mise en circulation :2002
-                              Nombre de kilomètre : 150 000 km
-                              Prix : 2700 euros</p><a class="btn btn-dark" href="javascript:void(0)" role="button">
-2700 €</a><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-Contacter le garage</button></div></div></div><div class="col"><div class="card" style="width: 18rem;"><img src="{{asset('assets/images/imagesAuto/ZOE.jpg')}}" alt="ZOE" class="align-self-center"><div class="card-body"><p class="card-text">ZOE</p>Caractéristiques:
-	                              Année de mise en circulation : 2020
-	                              Nombre de kilomètre : 80 000km
-	                              Prix : 15400 euros</p><a class="btn btn-dark" href="javascript:void(0)" role="button">15400 €</a><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">Contacter le garage</button></div></div></div><div class="col"><div class="card" style="width: 18rem;"><img src="{{asset('assets/images/imagesAuto/mercedes.jpg')}}" alt="mercedes" class="align-self-center"><div class="card-body"><p class="card-text">mercedes</p>Caractéristiques :
-	                              Année de mise en circulation : 2022
-	                              Nombre de kilomètre : 80 000 km
-	                              Prix : 40 000 euros</p><a class="btn btn-dark" href="javascript:void(0)" role="button">40 000 €</a><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">Contacter le garage</button></div></div></div><div class="col"><div class="card" style="width: 18rem;"><img src="{{asset('assets/images/imagesAuto/citroenc3.jpg')}}" alt="citroenc3" class="align-self-center"><div class="card-body"><p class="card-text">citroenc3</p>Caractéristiques :
-	                              Année de mise en circulation : 2008
-	                              Nombre de kilomètre : 150 000 km
-	                              Prix : 3500 euros</p><a class="btn btn-dark" href="javascript:void(0)" role="button">3500 €</a><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">Contacter le garage</button></div></div></div></section><section class="container mt-5"><div class="row"><table class="tableau-style table table-dark table-hover"><thead><tr><th colspan="2"></th><th scope="col">Ford</th><th scope="col">citroen</th><th scope="col">Audi</th><th scope="col">clio</th><th scope="col">espace</th><th scope="col">peugeot</th><th scope="col">clio1</th><th scope="col">ZOE</th><th scope="col">mercedes</th><th scope="col">citroenc3</th></tr></thead><tbody><tr><td colspan="2">airbag</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td></tr><tr><td colspan="2">ABS</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td></tr><tr><td colspan="2">Fermetures centralisées</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td></tr><tr><td colspan="2">bluetooh</td><td>OUI</td><td>NON</td><td>OUI</td><td>NON</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>OUI</td><td>NON</td></tr><tr><td colspan="2">Rechargement électrique</td><td>NON</td><td>NON</td><td>OUI</td><td>NON</td><td>NON</td><td>NON</td><td>NON</td><td>OUI</td><td>OUI</td><td>NON</td></tr></tbody></table></div></section><section class="container mt-5"><div class="row"><div class="col-lg-6"><div style="float: left;"><div class="contact"><p>Adresse : GARAGE VINCENT PARROT<br>RUE DE LA FORET<br>60000 TOULOUSE<br>Téléphone : 06 00 00 00 00</p></div></div></div><div class="col-lg-6"><div style="float: left;"><h4>Horaires d'ouverture:</h4><h4>Du Lundi au Vendredi : 8h45-12h et de 14h-18h</h4><h4>Samedi : 8h45-12h</h4><h4>Dimanche : Fermé</h4></div></div></div></section></body> </html>{% endblock %}
+	</section>
+	<section class="container mt-5">
+		<div class="row">
+			<div class="col-lg-6">
+				<div style="float: left;">
+					<div class="contact">
+
+
+					{% endblock %}
