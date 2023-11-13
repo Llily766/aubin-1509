@@ -25,6 +25,15 @@ class Cars
     #[ORM\Column]
     private ?int $mileage = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $model = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $carburant = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +83,42 @@ class Cars
     public function setMileage(int $mileage): static
     {
         $this->mileage = $mileage;
+
+        return $this;
+    }
+
+    public function getModel(): ?string
+    {
+        return $this->model;
+    }
+
+    public function setModel(string $model): static
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    public function getCarburant(): ?string
+    {
+        return $this->carburant;
+    }
+
+    public function setCarburant(string $carburant): static
+    {
+        $this->carburant = $carburant;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): static
+    {
+        $this->title = $title;
 
         return $this;
     }
