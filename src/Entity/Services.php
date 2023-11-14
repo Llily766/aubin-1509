@@ -17,16 +17,7 @@ class Services
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $electrique = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $vehicule = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $maintenance = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $reparation = null;
+    private ?string $picture = null;
 
     public function getId(): ?int
     {
@@ -45,62 +36,14 @@ class Services
         return $this;
     }
 
-    public function getElectrique(): ?string
+    public function getPicture(): ?string
     {
-        return $this->electrique;
+        return $this->picture;
     }
 
-    public function setElectrique(string $electrique): static
+    public function setPicture(string $picture): static
     {
-        $this->electrique = $electrique;
-
-        return $this;
-    }
-
-    public function getVehicule(): ?string
-    {
-        return $this->vehicule;
-    }
-
-    public function setVehicule(string $vehicule): static
-    {
-        $this->vehicule = $vehicule;
-
-        return $this;
-    }
-
-    public function getMaintenance(): ?string
-    {
-        return $this->maintenance;
-    }
-
-    public function setMaintenance(string $maintenance): static
-    {
-        $this->maintenance = $maintenance;
-
-        return $this;
-    }
-
-    public function getRéparation(): ?string
-    {
-        return $this->reparation;
-    }
-
-    public function setRéparation(string $réparation): static
-    {
-        $this->reparation = $réparation;
-
-        return $this;
-    }
-
-    public function getReparation(): ?string
-    {
-        return $this->reparation;
-    }
-
-    public function setReparation(string $reparation): static
-    {
-        $this->reparation = $reparation;
+        $this->picture = $picture;
 
         return $this;
     }

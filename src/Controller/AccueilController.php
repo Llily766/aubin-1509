@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Hours;
 use App\Entity\Services;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,8 +15,10 @@ class AccueilController extends AbstractController
     public function index(EntityManagerInterface $entityManager ): Response 
     {
         $Services = $entityManager->getRepository(Services::class)->findAll();
+        $Hours = $entityManager->getRepository(Hours::class)->findAll();
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
+            'Hours'=> $Hours,
             'Services' => $Services ,
         ]);
     }

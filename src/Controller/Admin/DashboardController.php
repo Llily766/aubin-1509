@@ -4,18 +4,22 @@ namespace App\Controller\Admin;
 
 use App\Entity\Boss;
 use App\Entity\Cars;
+use App\Entity\Hours;
+use App\Entity\Garage;
 use App\Entity\Customer;
 use App\Entity\Employee;
-use App\Entity\Garage;
 use App\Entity\Services;
+
 use App\Entity\Testimonials;
+
 use App\Entity\WorkshopContactForm;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
 class DashboardController extends AbstractDashboardController
@@ -59,6 +63,8 @@ class DashboardController extends AbstractDashboardController
          yield MenuItem::linkToCrud('Services', 'fas fa-list',Services::class);
          yield MenuItem::linkToCrud('WorkshopContactForm', 'fas fa-list',WorkshopContactForm::class);
          yield MenuItem::linkToCrud('Customer', 'fas fa-list',Customer::class);
+         yield MenuItem::linkToCrud('Hours', 'fas fa-list',Hours::class);
+
         }
           
 }  
