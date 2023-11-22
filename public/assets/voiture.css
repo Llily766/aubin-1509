@@ -1,4 +1,4 @@
-/* img {
+.img {
   width: 250px;
   height: auto;
   display: inline;
@@ -93,4 +93,3 @@ label {
 body {
   height: 100vh;
 }
- */

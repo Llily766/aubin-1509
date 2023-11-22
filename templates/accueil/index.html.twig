@@ -5,16 +5,16 @@
 
 {% block body %}
 	
-	<div class="container text-center">
-		<div class="row">
-		<p>journée d ouverture</p>
-			{% for hour in Hours %}
-			
-					
-						<p>{{ hour.days}} 
-						matinée :{{hour.morninghours}}
-						apres-midi:{{hour.evening}}</p>
-						
-				{% endfor %}
+			<div class='container'>
+				<div class='row'>
+				{% for service in Services %}
+				<div class="col-6">
+					<img src="upload/services/{{ service.picture }}" alt="{{service.title }}" class="align-self-center" width="auto"height='auto'>
+					<div class="card-body">
+						<p class="card-text"></p>{{service.title }}
+						</div>
+					</div>
+					{% endfor %}
+			</div>
 			</div>
 			{% endblock %}

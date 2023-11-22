@@ -19,6 +19,8 @@ class Services
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,4 +49,5 @@ class Services
 
         return $this;
     }
+
 }
