@@ -2,33 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Cars;
+use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CarsType extends AbstractType
+class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('price')
-            ->add('picture')
-            ->add('yearOfCirculation')
-            ->add('mileage')
-            ->add('model')
-            ->add('carburant')
-            ->add('title')
-            ->add('email')
-            ->add('phone number')
+            ->add('lastname')
             ->add('firstname')
+            ->add('message')
+            ->add('phone_number')
+            ->add('email')
+            ->add('title')
+        
+
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Cars::class,
+            'data_class'=>Contact::class,
         ]);
     }
 }
