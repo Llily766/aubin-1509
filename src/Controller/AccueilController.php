@@ -12,14 +12,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AccueilController extends AbstractController
 {
     #[Route('/', name: 'app_accueil')]
-    public function index(EntityManagerInterface $entityManager ): Response 
+    public function index (EntityManagerInterface $entityManager): Response 
     {
-        $Services = $entityManager->getRepository(Services::class)->findAll();
-        $Hours = $entityManager->getRepository(Hours::class)->findAll();
+        $services = $entityManager->getRepository(Services::class)->findAll();
+        $hours = $entityManager->getRepository(Hours::class)->findAll();
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
-            'Hours'=> $Hours,
-            'Services' => $Services ,
+            'hours'=> $hours,
+            'services' => $services ,
         ]);
     }
+
+    
 }
