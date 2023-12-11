@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AutoType extends AbstractType
+class VoiturType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -14,9 +14,8 @@ class AutoType extends AbstractType
             ->add('field_name')
             ->add('lastName')
             ->add('firstName')
-            ->add('phone_number')
+            ->add('phone-number')
             ->add('email')
-
         ;
     }
 
@@ -27,3 +26,4 @@ class AutoType extends AbstractType
         ]);
     }
 }
+?>
