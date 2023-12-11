@@ -20,6 +20,7 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
             'hours'=> $hours,
             'services' => $services ,
+        
         ]);
     }
 
