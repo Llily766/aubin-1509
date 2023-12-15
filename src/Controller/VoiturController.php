@@ -15,35 +15,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class VoiturController extends AbstractController
 
-
-
-
-
-
-
-namespace App\Form;
-
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-
-class AutoType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    #[Route('/voitur', name: 'app_voitur')]
+    public function index(EntityManagerInterface $entityManager ): Response 
     {
-        $builder
-            ->add('field_name')
-            ->add('firstname')
-            ->add('lastname')
-            ->add('phone_number')
-            ->add('email');
-    }
-
-
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            // Configure your form options here
+                $form = $entityManager->getRepository(form::class)->findAll();
+        
+        return $this->render('voitur/index.html.twig', [
+            'controller_name' => 'VoiturController',
+            'Form' => $form,
         ]);
     }
 }
