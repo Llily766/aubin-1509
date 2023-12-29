@@ -14,7 +14,7 @@
 				<input id="priceRange" min="0" max="50000" step="1000" type="range" class="form-range"/>
 
 				<h4>Valeur:
-					<span id="prixVoiture"></span>
+					<span id="priceValue"></span>
 				</h4>
 			</div>
 			<div class="col-lg-4">
@@ -22,10 +22,10 @@
 					<h3>Filtre par kilomètres</h3>
 				</div>
 
-				<input id="kilometers" min="0" max="500000" step="10000" type="range" class="form-range"/>
+				<input id="kilometerRange" min="0" max="500000" step="10000" type="range" class="form-range"/>
 
 				<h4>Valeur:
-					<span id="kilometers"></span>
+					<span id="kilometerValue"></span>
 				</h4>
 			</div>
 			<div class="col-lg-4">
@@ -33,10 +33,10 @@
 					<h3>Filtre par année</h3>
 				</div>
 
-				<input id="yearValue" min="0" max="5000" step="1000" type="range" class="form-range"/>
+				<input id="vintageRange="0" max="5000" step="1000" type="range" class="form-range"/>
 
 				<h4>Valeur:
-					<span id="YearValue"></span>
+					<span id="vintageValue"></span>
 				</h4>
 			</div>
 		</div>
@@ -322,28 +322,31 @@
 		</div>
 	</div>
 	<script>
-		const priceVoiture = document.getElementById('priceVoiture');
+
+// Recuperation des donnees du DOM
+const priceValue = document.getElementById('priceValue');
 const priceRange = document.getElementById('priceRange');
-priceVoiture.innerText = priceRange.valueAsNumber;
+const kilometerValue = document.getElementById('kilometerValue');
+const kilometerRange = document.getElementById('kilometerRange');
+const vintageValue = document.getElementById('priceVoiture');
+const vintageRange = document.getElementById('priceRange');
+
+// On injecte les donnees dans le DOM
+priceValue.innerText = priceRange.valueAsNumber;
+kilometerValue.innerText = kilometerRange.valueAsNumber;
+vintageValue.innerText = vintageRange.valueAsNumber;
+
+// On ajoute les evenements qui update le DOM
 priceRange.addEventListener('change', () => {
-priceVoiture.innerText = priceRange.valueAsNumber;
+priceValue.innerText = priceRange.valueAsNumber;
+})
+kilometerRange.addEventListener('change', () => {
+kilometerValue.innerText = kilometerRange.valueAsNumber;
+})
+vintageRange.addEventListener('change', () => {
+vintageValue.innerText = vintageRange.valueAsNumber;
 })
 
-
-const priceVoiture = document.getElementById('priceRange');
-const priceRange = document.getElementById('priceRange');
-priceVoiture.innerText = priceRange.valueAsNumber;
-priceRange.addEventListener('change', () => {
-priceVoiture.innerText = priceRange.valueAsNumber;
-})
-
-
-const priceVoiture = document.getElementById('priceRange');
-const priceRange = document.getElementById('priceRange');
-priceVoiture.innerText = priceVoiture.valueAsNumber;
-priceRange.addEventListener('change', () => {
-priceVoiture.innerText = priceVoiture.valueAsNumber;
-})
 // Filtre par prix
 $(document).ready(function () {
 $("#priceValue").on("input", function () {
@@ -359,41 +362,41 @@ $(this).hide();
 }
 });
 
-$("priceValue").text(priceCurrentValue + " €");
+$("#priceValue").text(priceCurrentValue + " €");
 });
 
 // Filtre par kilomètres
-$("kilometer").on("input", function () {
-priceCurrentValue = parseInt($(this).val());
+$("#kilometerValue").on("input", function () {
+const kilometerCurrentValue = parseInt($(this).val());
 
 $(".card").each(function () {
 const kilometer = parseInt($(this).find(".kilom").text().trim().replace('km', '').replace(' ', ''));
 
-if (kilom <= kilometer) {
+if (kilometer <= kilometerCurrentValue) {
 $(this).show();
 } else {
 $(this).hide();
 }
 });
 
-$("kilometer").text(kilometer + " km");
+$("#kilometerValue").text(kilometerCurrentValue + " km");
 });
 
 // Filtre par année
-$("#yearValue").on("input", function () {
-const priceCurrentValue = parseInt($(this).val());
+$("#vintageValue").on("input", function () {
+const vintageCurrentValue = parseInt($(this).val());
 
 $(".card").each(function () {
-const yearvalue = parseInt($(this).find(".annee").text().trim());
+const vintage = parseInt($(this).find(".annee").text().trim());
 
-if (yearvalue >= priceCurrentValue) {
+if (vintage >= vintageCurrentValue) {
 $(this).show();
 } else {
 $(this).hide();
 }
 });
 
-$("yearValue").text(cpriceCurrentValue);
+$("#vintageValue").text(vintageCurrentValue);
 });
 });
 
@@ -418,10 +421,8 @@ form.classList.add('was-validated')
 })()
 
 
-$(document).ready(function () { // 
-Lorsqu'un bouton est cliqué
-$('.btn.btn-primary[data-bs-toggle="modal"]').click(function () { 
-    // Récupérer le nom de la voiture à partir de l'attribut data-nom
+$(document).ready(function () { // Lorsqu'un bouton est cliqué
+$('.btn.btn-primary[data-bs-toggle="modal"]').click(function () { // Récupérer le nom de la voiture à partir de l'attribut data-nom
 const nomVoiture = $(this).data('nom');
 
 // Mettre à jour le contenu du span avec l'ID lenom dans le modal
@@ -430,6 +431,4 @@ $('#lenom').text(nomVoiture);
 });
 	</script>
 
-</body>
-</html>
-{% endblock %}
+</body></html>{% endblock %}
