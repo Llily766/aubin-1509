@@ -1,421 +1,435 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello FiltresController!{% endblock %}
+{% block title %}Hello FiltresController!
+{% endblock %}
 
 {% block body %}
-<div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="mt-5">
-                            <h3>Filtre par prix</h3>
-                        </div>
-                  
-                        <input id="myRange" 
-                               min="0" 
-                               max="50000" 
-                               step="1000" 
-                               type="range" 
-                               class="form-range" />
-                  
-                        <h4>Valeur: 
-                            <span id="curr"></span>
-                          </h4>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mt-5">
-                            <h3>Filtre par kilomètres</h3>
-                        </div>
-                  
-                        <input id="myRange1" 
-                               min="0" 
-                               max="500000" 
-                               step="10000" 
-                               type="range" 
-                               class="form-range" />
-                  
-                        <h4>Valeur: 
-                            <span id="curr1"></span>
-                          </h4>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mt-5">
-                            <h3>Filtre par année</h3>
-                        </div>
-                  
-                        <input id="myRange2" 
-                               min="0" 
-                               max="5000" 
-                               step="1000" 
-                               type="range" 
-                               class="form-range" />
-                  
-                        <h4>Valeur: 
-                            <span id="curr2"></span>
-                          </h4>
-                    </div>
-                </div>
-            </div>
-            <section class="container">
-                <h1 class="text-center">Les filtres</h1>
-                <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/FORD.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">Ford</p>
-                              <p>Caractéristiques :
-                              Année  <span class="annee">2010</span>
-                              Nombre de kilomètres :  <span class="kilom">100 000km</span>
-                              Nombre de portes:5
-                              Carburant : Essence
-                              </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 38900 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="Ford">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/citroen.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">citroen</p>
-                              <p>Caractéristiques :
-                              Année  <span class="annee">2007</span>
-                              Nombre de kilomètres :  <span class="kilom">200 000km</span>
-                               Nombre de portes:5
-                              Carburant : Diesel
-                             </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 3250 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/Audi.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">AUDI</p>
-                              <p>Caractéristiques:
-                              Année  <span class="annee">2022</span>
-                              Nombre de kilomètres= <span class="kilom">80 000km</span>
-                               Nombre de portes:5
-                              Carburant : Essence
-                             </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 18 000 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="AUDI">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                           <img src="/assets/images/imagesAuto/clio.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">clio</p>
-                              <p>Caractéristiques:
-                              Année  <span class="annee">2014</span>
-                              Bombre de kilomètres: <span class="kilom">80 000km</span>
-                               Nombre de portes:3
-                              Carburant: Diesel
-                               </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 3600 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="clio">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/espace.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">espace</p>
-                              <p>Caractéristiques
-                              Année  <span class="annee">2007</span>
-                              Nombre de kilomètres: <span class="kilom">120 000km</span>
-                             Nombre de portes:5
-                            Carburant : Diesel
-                            </p>
-                            <a class="btn btn-dark" href="javascript:void(0)" role="button"> 4250 €</a>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="espace">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                                <img src="/assets/images/imagesAuto/PEUGEOT.jpg" class="card-img-top" alt="..." >
-                            <div class="card-body">
-                              <p class="card-text">PEUGEOT</p>
-                              Caractéristiques
-                              <p>Année  <span class="annee">2009</span>
-                              Nombre de kilomètres : <span class="kilom">150 000km</span>
-                              Nombre de portes:5
-                              Carburant : Diesel 
-                              </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 3050 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="PEUGEOT">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/clio1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">clio1</p>
-                              <p>Caractéristiques:
-                              Année   <span class="annee">2002</span>
-                              Nombre de kilomètres : <span class="kilom">150 000km</span>
-                              Nombre de portes:5
-                              Carburant : Diesel
-                             </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 2700 €</a>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="clio1">
-                                Contacter le garage
-                            </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/assets/images/imagesAuto/ZOE.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">ZOE</p>
-                              <p>Caractéristiques:
-                              Année  <span class="annee">2022</span>
-                              Nombre de kilomètres :  <span class="kilom">80 000km</span>
-                               Nombre de portes:3
-                              Carburant : électrique
-                             </p> 
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button"> 15 400 €</a>    
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="ZOE">
-                                Contacter le garage
-                            </button>                      
-                               </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                             <img src="/assets/images/imagesAuto/mercedes.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">mercedes</p>
-                                <p>Caractéristiiques :
-                              Année  <span class="annee">2022</span>
-                              Nombre de kilomètres:  <span class="kilom">80 000km</span>
-                               Nombre de portes:5 
-                              Carburant : électrque ou Essence 
-                             </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button">  40 000 €</a> 
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="mercedes">
-                                Contacter le garage
-                            </button>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                             <img src="/assets/images/imagesAuto/citroenc3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">citroenc3</p>
-                              <p> Caractéristiiques:
-                              Année  <span class="annee">2008</span>
-                              Nombre de kilomètres : <span class="kilom">150 000km</span>
-                               Nombre de portes:5 
-                              Caarburant : Diesel 
-                              </p>
-                              <a class="btn btn-dark" href="javascript:void(0)" role="button">  3500 €</a> 
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroenc3">
-                                Contacter le garage
-                            </button>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-                            
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="mt-5">
+					<h3>Filtre par prix</h3>
+				</div>
 
-            </section>
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Laissez un message au GARAGE <span id="lenom">Ford</span></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row g-3 needs-validation mt-3 p-3" novalidate>
-                            <div class="col-md-4">
-                              <label for="prenom" class="form-label">Prénom</label>
-                              <input type="text" class="form-control" id="prenom" required>
-                              <div class="invalid-feedback">
-                                Veuillez entrer votre prénom
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <label for="nom" class="form-label">Nom</label>
-                              <input type="text" class="form-control" id="nom"  required>
-                              <div class="invalid-feedback">
-                                Veuillez entrer votre nom
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="telephone" class="form-label">Téléphone</label>
-                                <input type="number" class="form-control" id="telephone" required>
-                                <div class="invalid-feedback">
-                                    Veuillez entrer votre téléphone
-                                </div>
-                              </div>
-                            <div class="col-md-6">
-                              <label for="adresse" class="form-label">Adresse</label>
-                              <input type="text" class="form-control" id="adresse" required>
-                              <div class="invalid-feedback">
-                                Veuillez entrer votre adresse
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="mail" class="form-control" id="email" required>
-                                <div class="invalid-feedback">
-                                    Veuillez entrer votre email
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="validationTextarea" required></textarea>
-                                <div class="invalid-feedback">
-                                    Veuillez entrer un message
-                                </div>                            
-                            </div>
-                            <div class="col-12">
-                              <button class="btn btn-primary" type="submit">Valider</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <script>
-                var el = document.getElementById('curr');
-                var r = document.getElementById('myRange');
-                el.innerText = r.valueAsNumber;
-                r.addEventListener('change', () => {
-                    el.innerText = r.valueAsNumber;
-                })
-            </script>
-            <script>
-                var el = document.getElementById('curr1');
-                var r = document.getElementById('myRange1');
-                el.innerText = r.valueAsNumber;
-                r.addEventListener('change', () => {
-                    el.innerText = r.valueAsNumber;
-                })
-            </script>
-             <script>
-                var el = document.getElementById('curr2');
-                var r = document.getElementById('myRange2');
-                el.innerText = r.valueAsNumber;
-                r.addEventListener('change', () => {
-                    el.innerText = r.valueAsNumber;
-                })
-            </script>
-            <script>
-                $(document).ready(function() {
-                    // Filtre par prix
-                    $("#myRange").on("input", function() {
-                        var currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            var price = parseInt($(this).find(".btn").text().trim().replace('€', '').replace(' ', ''));
-            
-                            if (price <= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr").text(currentValue + " €");
-                    });
-            
-                    // Filtre par kilomètres
-                    $("#myRange1").on("input", function() {
-                        var currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            var kilom = parseInt($(this).find(".kilom").text().trim().replace('km', '').replace(' ', ''));
-            
-                            if (kilom <= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr1").text(currentValue + " km");
-                    });
-            
-                    // Filtre par année
-                    $("#myRange2").on("input", function() {
-                        var currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            var year = parseInt($(this).find(".annee").text().trim());
-            
-                            if (year >= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr2").text(currentValue);
-                    });
-                });
-            </script>
-            <script>
-                // Example starter JavaScript for disabling form submissions if there are invalid fields
-                (() => {
-                'use strict'
+				<input id="priceRange" min="0" max="50000" step="1000" type="range" class="form-range"/>
 
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                const forms = document.querySelectorAll('.needs-validation')
+				<h4>Valeur:
+					<span id="prixVoiture"></span>
+				</h4>
+			</div>
+			<div class="col-lg-4">
+				<div class="mt-5">
+					<h3>Filtre par kilomètres</h3>
+				</div>
 
-                // Loop over them and prevent submission
-                Array.from(forms).forEach(form => {
-                    form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
+				<input id="kilometers" min="0" max="500000" step="10000" type="range" class="form-range"/>
 
-                    form.classList.add('was-validated')
-                    }, false)
-                })
-                })()
+				<h4>Valeur:
+					<span id="kilometers"></span>
+				</h4>
+			</div>
+			<div class="col-lg-4">
+				<div class="mt-5">
+					<h3>Filtre par année</h3>
+				</div>
 
-            </script>
-            <script>
-                $(document).ready(function () {
-                    // Lorsqu'un bouton est cliqué
-                    $('.btn.btn-primary[data-bs-toggle="modal"]').click(function () {
-                        // Récupérer le nom de la voiture à partir de l'attribut data-nom
-                        var nomVoiture = $(this).data('nom');
-            
-                        // Mettre à jour le contenu du span avec l'ID lenom dans le modal
-                        $('#lenom').text(nomVoiture);
-                    });
-                });
-            </script>
+				<input id="yearValue" min="0" max="5000" step="1000" type="range" class="form-range"/>
+
+				<h4>Valeur:
+					<span id="YearValue"></span>
+				</h4>
+			</div>
+		</div>
+	</div>
+	<section class="container">
+		<h1 class="text-center">Les filtres</h1>
+		<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/FORD.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Ford</p>
+						<p>Caractéristiques :
+																					                              Année
+							<span class="annee">2010</span>
+							Nombre de kilomètres :
+							<span class="kilom">100 000km</span>
+							Nombre de portes:5
+																					                              Carburant : Essence
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							38900 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="Ford">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/citroen.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Citroen</p>
+						<p>Caractéristiques :
+																					                              Année
+							<span class="annee">2007</span>
+							Nombre de kilomètres :
+							<span class="kilom">200 000km</span>
+							Nombre de portes:5
+																					                              Carburant : Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							3250 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroen">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/Audi.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Audi</p>
+						<p>Caractéristiques:
+																					                              Année
+							<span class="annee">2022</span>
+							Nombre de kilomètres=
+							<span class="kilom">80 000km</span>
+							Nombre de portes:5
+																					                              Carburant : Essence
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							18 000 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="AUDI">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/clio.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Clio</p>
+						<p>Caractéristiques:
+																					                              Année
+							<span class="annee">2014</span>
+							Bombre de kilomètres:
+							<span class="kilom">80 000km</span>
+							Nombre de portes:3
+																					                              Carburant: Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							3600 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="clio">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/espace.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Espace</p>
+						<p>Caractéristiques
+																					                              Année
+							<span class="annee">2007</span>
+							Nombre de kilomètres:
+							<span class="kilom">120 000km</span>
+							Nombre de portes:5
+																					                            Carburant : Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							4250 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="espace">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/PEUGEOT.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Peugeot</p>
+						Caractéristiques
+						<p>Année
+							<span class="annee">2009</span>
+							Nombre de kilomètres :
+							<span class="kilom">150 000km</span>
+							Nombre de portes:5
+																					                              Carburant : Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							3050 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="PEUGEOT">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/clio1.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Clio1</p>
+						<p>Caractéristiques:
+																					                              Année
+							<span class="annee">2002</span>
+							Nombre de kilomètres :
+							<span class="kilom">150 000km</span>
+							Nombre de portes:5
+																					                              Carburant : Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							2700 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="clio1">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/ZOE.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Zoe</p>
+						<p>Caractéristiques:
+																					                              Année
+							<span class="annee">2022</span>
+							Nombre de kilomètres :
+							<span class="kilom">80 000km</span>
+							Nombre de portes:3
+																					                              Carburant : électrique
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							15 400 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="ZOE">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/mercedes.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Mercedes</p>
+						<p>Caractéristiiques :
+																					                              Année
+							<span class="annee">2022</span>
+							Nombre de kilomètres:
+							<span class="kilom">80 000km</span>
+							Nombre de portes:5 
+																					                              Carburant : électrque ou Essence
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							40 000 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="mercedes">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card" style="width: 18rem;">
+					<img src="/assets/images/imagesAuto/citroenc3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Citroenc3</p>
+						<p>
+							Caractéristiiques:
+																					                              Année
+							<span class="annee">2008</span>
+							Nombre de kilomètres :
+							<span class="kilom">150 000km</span>
+							Nombre de portes:5 
+																					                              Caarburant : Diesel
+						</p>
+						<a class="btn btn-dark" href="javascript:void(0)" role="button">
+							3500 €</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-nom="citroenc3">
+							Contacter le garage
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+	<!-- Modal -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">Laissez un message au GARAGE
+						<span id="lenom">Ford</span>
+					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form class="row g-3 needs-validation mt-3 p-3" novalidate>
+						<div class="col-md-4">
+							<label for="prenom" class="form-label">Prénom</label>
+							<input type="text" class="form-control" id="prenom" required>
+							<div class="invalid-feedback">
+								Veuillez entrer votre prénom
+							</div>
+						</div>
+						<div class="col-md-4">
+							<label for="nom" class="form-label">Nom</label>
+							<input type="text" class="form-control" id="nom" required>
+							<div class="invalid-feedback">
+								Veuillez entrer votre nom
+							</div>
+						</div>
+						<div class="col-md-4">
+							<label for="telephone" class="form-label">Téléphone</label>
+							<input type="number" class="form-control" id="telephone" required>
+							<div class="invalid-feedback">
+								Veuillez entrer votre téléphone
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label for="adresse" class="form-label">Adresse</label>
+							<input type="text" class="form-control" id="adresse" required>
+							<div class="invalid-feedback">
+								Veuillez entrer votre adresse
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label for="email" class="form-label">Email</label>
+							<input type="mail" class="form-control" id="email" required>
+							<div class="invalid-feedback">
+								Veuillez entrer votre email
+							</div>
+						</div>
+						<div class="col-12">
+							<label for="message" class="form-label">Message</label>
+							<textarea class="form-control" id="validationTextarea" required></textarea>
+							<div class="invalid-feedback">
+								Veuillez entrer un message
+							</div>
+						</div>
+						<div class="col-12">
+							<button class="btn btn-primary" type="submit">Valider</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		const priceVoiture = document.getElementById('priceVoiture');
+const priceRange = document.getElementById('priceRange');
+priceVoiture.innerText = priceRange.valueAsNumber;
+priceRange.addEventListener('change', () => {
+priceVoiture.innerText = priceRange.valueAsNumber;
+})
+
+
+const priceVoiture = document.getElementById('priceRange');
+const priceRange = document.getElementById('priceRange');
+priceVoiture.innerText = priceRange.valueAsNumber;
+priceRange.addEventListener('change', () => {
+priceVoiture.innerText = priceRange.valueAsNumber;
+})
+
+
+const priceVoiture = document.getElementById('priceRange');
+const priceRange = document.getElementById('priceRange');
+priceVoiture.innerText = priceVoiture.valueAsNumber;
+priceRange.addEventListener('change', () => {
+priceVoiture.innerText = priceVoiture.valueAsNumber;
+})
+// Filtre par prix
+$(document).ready(function () {
+$("#priceValue").on("input", function () {
+const priceCurrentValue = parseInt($(this).val());
+
+$(".card").each(function () {
+const price = parseInt($(this).find(".btn").text().trim().replace('€', '').replace(' ', ''));
+
+if (price <= priceCurrentValue) {
+$(this).show();
+} else {
+$(this).hide();
+}
+});
+
+$("priceValue").text(priceCurrentValue + " €");
+});
+
+// Filtre par kilomètres
+$("kilometer").on("input", function () {
+priceCurrentValue = parseInt($(this).val());
+
+$(".card").each(function () {
+const kilometer = parseInt($(this).find(".kilom").text().trim().replace('km', '').replace(' ', ''));
+
+if (kilom <= kilometer) {
+$(this).show();
+} else {
+$(this).hide();
+}
+});
+
+$("kilometer").text(kilometer + " km");
+});
+
+// Filtre par année
+$("#yearValue").on("input", function () {
+const priceCurrentValue = parseInt($(this).val());
+
+$(".card").each(function () {
+const yearvalue = parseInt($(this).find(".annee").text().trim());
+
+if (yearvalue >= priceCurrentValue) {
+$(this).show();
+} else {
+$(this).hide();
+}
+});
+
+$("yearValue").text(cpriceCurrentValue);
+});
+});
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.from(forms).forEach(form => {
+form.addEventListener('submit', event => {
+if (!form.checkValidity()) {
+event.preventDefault()
+event.stopPropagation()
+}
+
+form.classList.add('was-validated')
+}, false)
+})
+})()
+
+
+$(document).ready(function () { // 
+Lorsqu'un bouton est cliqué
+$('.btn.btn-primary[data-bs-toggle="modal"]').click(function () { 
+    // Récupérer le nom de la voiture à partir de l'attribut data-nom
+const nomVoiture = $(this).data('nom');
+
+// Mettre à jour le contenu du span avec l'ID lenom dans le modal
+$('#lenom').text(nomVoiture);
+});
+});
+	</script>
+
 </body>
-
-</html>  
+</html>
 {% endblock %}

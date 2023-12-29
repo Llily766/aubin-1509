@@ -4,17 +4,39 @@
 {% endblock %}
 
 {% block body %}
-	
-			<div class='container'>
-				<div class='row'>
-				{% for service in services %}
+
+	<div class='container'>
+		<div class='row'>
+			{% for service in services %}
 				<div class="col-6">
-					<img src="upload/services/{{ service.picture }}" alt="{{service.title }}" class="align-self-center" width="auto"height='auto'>
+					<img src="upload/services/{{ service.picture }}" alt="{{service.title }}" class="align-self-center" width="auto" height='auto'>
 					<div class="card-body">
-						<p class="card-text"></p>{{service.title }}
-						</div>
+						<p class="card-text"></p>
+						{{service.title }}
 					</div>
-					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div>Bonne entreprise,simple et efficace</div>
 			</div>
+			<div class="carousel-item">
+				<div>Très bonne accueil,très bon qualité prix</div>
 			</div>
-			{% endblock %}
+			<div class="carousel-item">
+				<div>Société qui mérite d'etre connue,disponilité au rendez-vous</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+{% endblock %}
