@@ -34,7 +34,7 @@
                                type="range" 
                                class="form-range" />
                   
-                        <h4>Valeur: 
+                        <h4>Valeur: 40000
                             <span id="curr"></span>
                           </h4>
                     </div>
@@ -50,7 +50,7 @@
                                type="range" 
                                class="form-range" />
                   
-                        <h4>Valeur: 
+                        <h4>Valeur: 300000
                             <span id="curr1"></span>
                           </h4>
                     </div>
@@ -66,7 +66,7 @@
                                type="range" 
                                class="form-range" />
                   
-                        <h4>Valeur: 
+                        <h4>Valeur: 2025
                             <span id="curr2"></span>
                           </h4>
                     </div>
@@ -242,81 +242,5 @@
                 </div>
 
             </section>
-            <script>
-                const priceVoiutre = document.getElementById('curr');
-                const priceRange= document.getElementById('myRange');
-                priceVoiture.innerText = priceRange.valueAsNumber;
-                prixRange.addEventListener('change', () => {
-                    const priceVoiture.innerText = r.valueAsNumber;
-                })
-            
-                const priceVoiture = document.getElementById('curr1');
-                const priceRange = document.getElementById('myRange1');
-                const priceVoiture.innerText = .priceRange;
-                prixRange.addEventListener('change', () => {
-                     priceVoiture.innerText = priceRange.valueAsNumber;
-                })
-            
-                const priceVoiture = document.getElementById('curr2');
-                const priceRange = document.getElementById('myRange2');
-                price priceVoiture.innerText = priceRange.valueAsNumber;
-                priceVoiture.addEventListener('change', () => {
-                    priceVoiture.innerText = priceRange.valueAsNumber;
-                })
-            
-                $(document).ready(function() {
-                    // Filtre par prix
-                    $("#myRange").on("input", function() {
-                        const currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            const price = parseInt($(this).find(".btn").text().trim().replace('€', '').replace(' ', ''));
-            
-                            if (price <= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr").text(currentValue + " €");
-                    });
-            
-                    // Filtre par kilomètres
-                    $("#myRange1").on("input", function() {
-                        const currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            const kilom = parseInt($(this).find(".kilom").text().trim().replace('km', '').replace(' ', ''));
-            
-                            if (kilom <= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr1").text(currentValue + " km");
-                    });
-            
-                    // Filtre par année
-                    $("#myRange2").on("input", function() {
-                        const currentValue = parseInt($(this).val());
-            
-                        $(".card").each(function() {
-                            const year = parseInt($(this).find(".annee").text().trim());
-            
-                            if (year >= currentValue) {
-                                $(this).show();
-                            } else {
-                                $(this).hide();
-                            }
-                        });
-            
-                        $("#curr2").text(currentValue);
-                    });
-                });
-            </script>
-</body>
-
-</html>
+        
+                
