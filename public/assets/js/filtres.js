@@ -8,9 +8,7 @@ function handleSliderChange(sliderId, outputId, unit) {
     });
 }
 
-handleSliderChange('myRange', 'curr', ' €');
-handleSliderChange('myRange1', 'curr1', ' km');
-handleSliderChange('myRange2', 'curr2', '');
+
 
 $(document).ready(function() {
     // Filtre par prix
@@ -64,7 +62,9 @@ $(document).ready(function() {
         $("#curr2").text(currentValue);
     });
 });
-
+handleSliderChange('myRange', 'curr', ' €');
+handleSliderChange('myRange1', 'curr1', ' km');
+handleSliderChange('myRange2', 'curr2', '');
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
