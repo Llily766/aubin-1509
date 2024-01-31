@@ -4,11 +4,13 @@
 {% endblock %}
 
 {% block body %}
-
+<h3> Les différents service du garage</h3>
 	<div class='container'>
 		<div class='row'>
 			{% for service in services %}
+      
 				<div class="col-6">
+        
 					<img src="upload/services/{{ service.picture }}" alt="{{service.title }}" class="align-self-center" width="auto" height='auto'>
 					<div class="card-body">
 						<p class="card-text"></p>
@@ -18,6 +20,7 @@
 			{% endfor %}
 		</div>
 	</div>
+  <h3>Les Témoignages </h3>
 	<div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
